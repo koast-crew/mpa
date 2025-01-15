@@ -1,0 +1,17 @@
+allprojects {
+    group = 'com.example.mpa'
+    version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+// 서브 프로젝트 중 빌드 대상 제외
+configure(subprojects.findAll {
+    it.name in ['admin-web', 'user-web', 'doc']
+}) {
+    tasks.configureEach {
+        enabled = false
+    }
+}

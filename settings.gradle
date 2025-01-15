@@ -1,0 +1,15 @@
+rootProject.name = 'mpa'
+
+// 서브 프로젝트 포함
+include 'admin-api'
+include 'user-api'
+include 'admin-web'
+include 'user-web'
+include 'doc'
+
+// 각 프로젝트의 디렉토리 경로 설정
+project(':admin-api').projectDir = file('admin-api')
+project(':user-api').projectDir = file('user-api')
+project(':admin-web').projectDir = file('admin-web')
+project(':user-web').projectDir = file('user-web')
+project(':doc').projectDir = file('doc')
