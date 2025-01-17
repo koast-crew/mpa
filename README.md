@@ -10,9 +10,9 @@
 
 | 프로젝트 이름   | 설명                                         | 운영환경                     |
 |----------------|--------------------------------------------|--------------------------|
-| `admin-api`   | 관리자 Spring Boot 프로젝트                       | tomcat                   |
+| `admin`   | 관리자 Spring Boot 프로젝트                       | tomcat                   |
 | `user-api`    | 일반 사용자 Spring Boot 프로젝트                    | tomcat                   |
-| `admin-web`   | 관리자 React 프론트엔드 프로젝트                       | admin-api 밑에 static 에 배포 |
+| `admin-web`   | 관리자 React 프론트엔드 프로젝트                       | admin 밑에 static 에 배포 |
 | `user-web`    | 일반 사용자 React 프론트엔드 프로젝트                   | nginx 에 배포               |
 | `doc`         | 데이터베이스, geoserver, docker 설정 등 다양한 문서들을 관리 |                          |
 
@@ -34,7 +34,7 @@ gradle init --type basic
 Set-Content -Path ".\settings.gradle" -Value """
 rootProject.name = 'mpa'
 
-include 'admin-api'
+include 'admin'
 include 'user-api'
 include 'admin-web'
 include 'user-web'
@@ -64,7 +64,7 @@ configure(subprojects.findAll { it.name in ['admin-web', 'user-web', 'doc'] }) {
 """
 
 # 5. 하위 프로젝트 디렉토리 생성
-mkdir admin-api user-api admin-web user-web doc
+mkdir admin user-api admin-web user-web doc
 mkdir doc\ddl doc\dml
 
 # 6. Gradle Wrapper 생성
@@ -88,7 +88,7 @@ mpa/
 │   └── wrapper/
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
-├── admin-api/           # Spring Initializer로 생성
+├── admin/           # Spring Initializer로 생성
 ├── user-api/            # Spring Initializer로 생성
 ├── admin-web/           # React 프로젝트
 ├── user-web/            # React 프로젝트
@@ -108,9 +108,9 @@ mpa/
    ```
 
 2) **특정 서브 프로젝트 빌드**
-   예: `admin-api` 빌드
+   예: `admin` 빌드
    ```bash
-   ./gradlew :admin-api:build
+   ./gradlew :admin:build
    ```
 
 3) **Spring Boot 실행**
