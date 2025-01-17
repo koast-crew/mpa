@@ -8,13 +8,13 @@
 
 ## 1. 하위 프로젝트
 
-| 프로젝트 이름   | 설명                                         |
-|----------------|--------------------------------------------|
-| `admin-api`   | 관리자 Spring Boot 프로젝트                       |
-| `user-api`    | 일반 사용자 Spring Boot 프로젝트                    |
-| `admin-web`   | 관리자 React 프론트엔드 프로젝트                       |
-| `user-web`    | 일반 사용자 React 프론트엔드 프로젝트                   |
-| `doc`         | 데이터베이스, geoserver, docker 설정 등 다양한 문서들을 관리 |
+| 프로젝트 이름   | 설명                                         | 운영환경                     |
+|----------------|--------------------------------------------|--------------------------|
+| `admin-api`   | 관리자 Spring Boot 프로젝트                       | tomcat                   |
+| `user-api`    | 일반 사용자 Spring Boot 프로젝트                    | tomcat                   |
+| `admin-web`   | 관리자 React 프론트엔드 프로젝트                       | admin-api 밑에 static 에 배포 |
+| `user-web`    | 일반 사용자 React 프론트엔드 프로젝트                   | nginx 에 배포               |
+| `doc`         | 데이터베이스, geoserver, docker 설정 등 다양한 문서들을 관리 |                          |
 
 ---
 
