@@ -125,3 +125,22 @@ mpa/
 - **`admin-web`과 `user-web`**: React 프로젝트로 구성하며, Node.js 및 npm/yarn으로 관리합니다.
 - **`doc`**: SQL 스크립트를 저장하고 관리하기 위한 디렉토리로, Gradle 빌드 대상에서 제외됩니다.
 
+
+## 5. 시작
+
+1) **컨테이너 시작**  
+   docker-compose up -d
+   
+2) **컨테이너 중지**  
+   docker-compose down  
+   docker-compose down -v # 데이터까지 삭제
+
+3) **컨테이너 재 시작**  
+   docker-compose restart  
+   docker-compose restart db  
+   docker-compose restart geoserver  
+
+4) **컨테이너 로그 확인**  
+   docker-compose logs -f   
+   docker-compose logs -f db  
+   docker-compose logs -f geoserver  

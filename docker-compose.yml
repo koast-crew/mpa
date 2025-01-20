@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    container_name: mpa-postgres
+    restart: always
+    image: postgis/postgis:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mpa
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C --lc-ctype=C"
+    volumes:
+      - ./doc/database:/database:ro
+      #- ./doc/database:/docker-entrypoint-initdb.d
+      - ./doc/database/init-sql.sh:/docker-entrypoint-initdb.d/init-sql.sh:ro
+      #- ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 25432:5432
+
+  geoserver:
+    container_name: mpa-geoserver
+    restart: always
+    image: docker.osgeo.org/geoserver:2.26.x  # GeoServer 최신 공식 이미지
+    #volumes:
+      #- ./geoserver-data:/opt/geoserver_data
+    ports:
+      - 28080:8080
