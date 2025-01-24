@@ -3,7 +3,7 @@ package koast.admin.security;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
-public class CryptKeyManager {
+public class KoastKeyManager {
 
 	private static final String randomKeyword = "dHNhb2shIHNpIGVtYW4geW0gLnRzYW9rIHJvZiBhZWRpIGRhYiBhIGVrYW0gdG9uIG9kIGVzYWVscCAseWVrIHRlcmNlcyMgZG51b2YgZXZhaCB1b3kgZkk=";
 

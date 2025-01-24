@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Slf4j
-public class CryptKeyManagerTest {
+public class KoastManagerTest {
     @Test
     public void testGetInitKey() {
-        String initKey = CryptKeyManager.getInitKey();
+        String initKey = KoastKeyManager.getInitKey();
         log.info("---------- initKey = {}", initKey);
     }
 }

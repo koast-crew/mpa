@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="koast.admin.domain.policy.entity.Policy" alias="policy"/>
+    </typeAliases>
+
+    <!--<typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>
+        <typeHandler handler="aisar.user.typehandler.IntegerArrayTypeHandler" javaType="Integer[]" jdbcType="ARRAY"/>
+        &lt;!&ndash;<typeHandler handler="org.apache.ibatis.type.LocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>&ndash;&gt;
+        <typeHandler handler="aisar.user.typehandler.LocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>
+        <typeHandler handler="aisar.user.typehandler.LocalDateTimeListTypeHandler" javaType="java.util.List" jdbcType="ARRAY"/>
+    </typeHandlers>-->
+
+    <!--<mappers>
+        <mapper resource="mybatis/SarResultMap.xml"/>
+    </mappers>-->
+
+</configuration>
