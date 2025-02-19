@@ -1,6 +1,7 @@
 # MPA Frontend
 
-## WIP
+## 실행
+
 
 ## 개발 환경
 * Node >= 20
