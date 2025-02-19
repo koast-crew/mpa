@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
-    "@koast/ui": "^0.0.14",
+    "@koast/ui": "^0.0.19",
     "@stylistic/eslint-plugin": "^2.6.4",
     "@stylistic/eslint-plugin-js": "^2.6.4",
     "@testing-library/jest-dom": "^6.4.8",
@@ -54,7 +54,7 @@
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
+    "vite": "^6.0.5",
     "vite-plugin-cesium": "^1.2.23"
   }
 }
