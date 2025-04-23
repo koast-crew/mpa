@@ -36,7 +36,8 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-web',
             'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4',
 
-            'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+            'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4',
+            'org.mapstruct:mapstruct:1.5.5.Final'
     )
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -45,6 +46,7 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor (
             'org.springframework.boot:spring-boot-configuration-processor',
+            'org.mapstruct:mapstruct-processor:1.5.5.Final',
             'org.projectlombok:lombok'
     )
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'

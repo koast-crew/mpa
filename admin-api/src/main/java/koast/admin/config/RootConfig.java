@@ -45,18 +45,15 @@ public class RootConfig {
 
     @Bean
     public DataSource dataSource() {
-        String decryptedUrl = dataSourceProperties.getDecryptedUrl();  // ✅ 복호화 후 전달
+        String decryptedUrl = dataSourceProperties.getDecryptedUrl();
         String decryptedUsername = dataSourceProperties.getDecryptedUsername();
         String decryptedPassword = dataSourceProperties.getDecryptedPassword();
 
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName(dataSourceProperties.getDriverClassName());
-        hikariConfig.setJdbcUrl(decryptedUrl); // ✅ PostgreSQL 드라이버가 인식 가능한 형태로 전달
+        hikariConfig.setJdbcUrl(decryptedUrl);
         hikariConfig.setUsername(decryptedUsername);
         hikariConfig.setPassword(decryptedPassword);
-
-        log.info("📌 Decoded Database URL: {}", decryptedUrl);
-        log.info("📌 Decoded Database Username: {}", decryptedUsername);
 
         return new HikariDataSource(hikariConfig);
     }
@@ -76,6 +73,11 @@ public class RootConfig {
         return sessionFactoryBean.getObject();
     }
 
+    /**
+     * TODO 여기를 이렇게 구현해야 동시 접속자 문제가 생기지 않는다고 함
+     * @param sqlSessionFactory
+     * @return
+     */
     @Bean
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);

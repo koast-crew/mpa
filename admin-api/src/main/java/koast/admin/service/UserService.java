@@ -1,4 +1,4 @@
-package koast.admin.service.impl;
-
-public interface UserService {
-}
+//package koast.admin.service.impl;
+//
+//public interface UserService {
+//}

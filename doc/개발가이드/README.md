@@ -2,6 +2,13 @@
 
 MPA(Map Platform Application) 프로젝트는 유지보수성과 확장성을 고려하여 아래와 같은 개발 원칙을 따릅니다.
 
+## 1. Jasypt와 application.properties, custom properties 등의 설정이 엮이면서 ENC('xxxx") 형태가 안되고
+      그냥 암호화 값을 설정
+   2. mybatis 사용할 때 두가지 주의 사항이 있는데....
+      SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) 을 빼면 세션 동기화에 문제가 생길 여지가
+      있으므로 꼭 추가
+3. @Repository 는 @MapperScan이 Mybatis 매퍼 인터페이스를 자동 관리하므로 생략하는 것이 표준
+
 ## 1. Entity는 Table과 1:1로 매핑해야 한다.
 - **Entity 클래스는 데이터베이스 테이블과 1:1로 매핑되며, 불필요한 추가 필드를 포함하지 않는다.**
 - 검색 조건, 요청 파라미터 등의 데이터는 **DTO에서 관리**하며, Entity에는 포함하지 않는다.

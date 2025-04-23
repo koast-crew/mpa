@@ -1,4 +1,4 @@
-package koast.admin.repository;
-
-public interface UserRepository {
-}
+//package koast.admin.repository;
+//
+//public interface UserRepository {
+//}

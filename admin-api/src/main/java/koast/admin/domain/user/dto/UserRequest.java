@@ -1,4 +1,6 @@
 package koast.admin.domain.user.dto;
 
-public class UserRequest {
+import koast.admin.common.paging.BaseSearch;
+
+public class UserRequest extends BaseSearch {
 }
