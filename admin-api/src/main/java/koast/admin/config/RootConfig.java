@@ -26,7 +26,7 @@ import javax.sql.DataSource;
 @Slf4j
 @Configuration
 @ComponentScan(
-        basePackages = {"koast.admin.service", "koast.admin.repository"},
+        basePackages = {"koast.admin.service", "koast.admin.security.auth", "koast.admin.repository"},
         includeFilters = {
                 @ComponentScan.Filter(type = FilterType.ANNOTATION, value = Component.class),
                 @ComponentScan.Filter(type = FilterType.ANNOTATION, value = Service.class),

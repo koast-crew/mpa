@@ -15,8 +15,8 @@
 
     <typeHandlers>
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>
-        <typeHandler handler=".user.typehandler.LocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>
-    </typeHandlers>-->
+        <typeHandler handler="koast.admin.common.mybatis.typehandler.LocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>
+    </typeHandlers>
 
     <!--<mappers>
         <mapper resource="mybatis/SarResultMap.xml"/>

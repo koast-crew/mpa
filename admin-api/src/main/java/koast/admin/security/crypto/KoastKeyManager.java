@@ -1,4 +1,4 @@
-package koast.admin.security;
+package koast.admin.security.crypto;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;

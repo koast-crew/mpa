@@ -1,11 +1,11 @@
 package koast.admin.service.impl;
 
 import koast.admin.domain.policy.dto.PolicyResponse;
-import koast.admin.domain.policy.entity.Policy;
 import koast.admin.domain.policy.mapper.PolicyMapper;
 import koast.admin.repository.PolicyRepository;
 import koast.admin.service.PolicyService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author jeongdae
  *
  */
+@Slf4j
 @AllArgsConstructor
 @Service
 public class PolicyServiceImpl implements PolicyService {
