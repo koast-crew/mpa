@@ -11,17 +11,20 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+/**
+ * 인증 체크
+ */
 @Component
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
                          AuthenticationException authException) throws IOException {
+
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType("application/json;charset=UTF-8");
 
         ApiResponse<Object> apiResponse = ApiResponse.<Object>builder()
-                .status(401)
                 .payload(null)
                 .pagination(null)
                 .exception(new BusinessException("AUTH", "AUTH_REQUIRED", "인증이 필요합니다."))

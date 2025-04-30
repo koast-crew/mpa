@@ -34,9 +34,6 @@ public class LoginController {
         PolicyResponse policyResponse = policyService.getLatest();
         log.info("@@ policyResponse = {}", policyResponse);
 
-        return ApiResponse.<PolicyResponse>builder()
-                                            .status(200)
-                                            .payload(policyResponse)
-                                            .build();
+        return ApiResponse.<PolicyResponse>builder().payload(policyResponse).build();
     }
 }

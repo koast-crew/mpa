@@ -11,17 +11,18 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+/**
+ * 인가 체크
+ */
 @Component
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
     @Override
-    public void handle(HttpServletRequest request, HttpServletResponse response,
-                       AccessDeniedException accessDeniedException) throws IOException {
+    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException {
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         response.setContentType("application/json;charset=UTF-8");
 
         ApiResponse<Object> apiResponse = ApiResponse.<Object>builder()
-                .status(403)
                 .payload(null)
                 .pagination(null)
                 .exception(new BusinessException("AUTH", "FORBIDDEN", "권한이 없습니다."))

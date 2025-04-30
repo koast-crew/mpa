@@ -12,7 +12,6 @@ import lombok.ToString;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResponse<T> {
 
-	private int status;
     private T payload;
     private Pagination pagination;
     private BusinessException exception;
@@ -21,8 +20,7 @@ public class ApiResponse<T> {
     }
 
     @Builder
-    public ApiResponse(int status, T payload, Pagination pagination, BusinessException exception) {
-        this.status = status;
+    public ApiResponse(T payload, Pagination pagination, BusinessException exception) {
         this.payload = payload;
         this.pagination = pagination;
         this.exception = exception;
