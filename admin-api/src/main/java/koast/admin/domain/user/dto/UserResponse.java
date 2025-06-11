@@ -17,9 +17,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserSession implements Serializable {
-
-    private static final long serialVersionUID = -2416233296928075738L;
+public class UserResponse {
 
     // 세션 하이재킹 체크
 	private String loginIp;

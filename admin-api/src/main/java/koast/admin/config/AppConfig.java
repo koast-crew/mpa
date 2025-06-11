@@ -2,15 +2,11 @@ package koast.admin.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -36,10 +32,10 @@ import javax.sql.DataSource;
                 @ComponentScan.Filter(type = FilterType.ANNOTATION, value = RestController.class) })
 @MapperScan(basePackages="koast.admin.repository")
 @PropertySource("classpath:admin-${spring.profiles.active}.properties")
-public class RootConfig {
+public class AppConfig {
     private final DataSourceProperties dataSourceProperties;
 
-    public RootConfig(DataSourceProperties dataSourceProperties) {
+    public AppConfig(DataSourceProperties dataSourceProperties) {
         this.dataSourceProperties = dataSourceProperties;
     }
 

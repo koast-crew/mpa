@@ -28,6 +28,6 @@ public class PolicyServiceImpl implements PolicyService {
      */
     @Transactional(readOnly=true)
     public PolicyResponse getLatest() {
-        return policyMapper.toResponse(policyRepository.getLatest());
+        return policyMapper.toDto(policyRepository.getLatest());
     }
 }

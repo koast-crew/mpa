@@ -13,7 +13,7 @@ create table user_info (
 	postal_code					varchar(6),
 	address						varchar(256),
 	address_etc					varchar(1000),
-	status						varchar(30)							default 'USE',
+	status						varchar(30)							default 'ACTIVE',
 	login_count					integer								default 0,
 	fail_login_count			integer								default 0,
 	last_login_date				timestamp with time zone,
@@ -35,7 +35,7 @@ comment on column user_info.postal_code is '우편번호';
 comment on column user_info.address is '주소';
 comment on column user_info.address_etc is '상세주소';
 comment on column user_info.status is 
-	'사용자 상태. USE:사용중, PERMISSION_DENIED:사용중지, EXCEEDED_RETRIES:비밀번호 실패 횟수 초과, UNUSED:휴먼 상태, EXPIRED:사용기간 종료, LOGICAL_DELETE:삭제(화면 비표시), TEMP_PASSWORD:임시 비밀번호, WAITING_APPROVAL:승인대기';
+	'사용자 상태. ACTIVE:사용중, DISABLED:사용중지, LOCKED:비밀번호 실패 횟수 초과, DORMANT:휴먼 상태, EXPIRED:사용기간 종료, DELETED:삭제(화면 비표시), TEMP_PASSWORD:임시 비밀번호, PENDING_APPROVAL:승인대기';
 comment on column user_info.login_count is '로그인 횟수';
 comment on column user_info.fail_login_count is '로그인 실패 횟수';
 comment on column user_info.last_login_date is '마지막 로그인 날짜';
