@@ -28,6 +28,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthenticationConfiguration authenticationConfiguration) throws Exception {
 
+        // client에서 보내는 /login/process 요청을 spring controller가 아닌 security filter chain에서 커스텀 필터 처리
         JsonUsernamePasswordAuthenticationFilter jsonFilter = new JsonUsernamePasswordAuthenticationFilter(objectMapper);
         jsonFilter.setAuthenticationManager(authenticationManager(authenticationConfiguration));
         jsonFilter.setAuthenticationSuccessHandler(successHandler);
