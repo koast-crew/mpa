@@ -3,6 +3,18 @@
 
 <mapper namespace="koast.admin.repository.UserMapper">
 
+    <!-- 여기에 User를 ResultMap으로 만들어서 사용해야 함
+    <resultMap id="UserWithGroupMap" type="user">
+        <id property="userId" />
+        ... 생략. pk만 id 그 외 컬럼은 result ...
+        <association property="userGroup" javaType="userGroup">
+            <id property="userGroupId" />
+            <result property="userGroupName" />
+            ... 생략 ...
+        </association>
+    </resultMap>
+     -->
+
     <!-- 세션 정보 -->
     <select id="findByUserIdAndPolicy" parameterType="userLoginRequest" resultType="userSession">
         /* findByUserIdAndPolicy */

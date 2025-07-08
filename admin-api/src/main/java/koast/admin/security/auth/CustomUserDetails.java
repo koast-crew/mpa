@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 /**
- * User 객체로부터 권한(ROLE_ADMIN, ROLE_USER 등)을 가져와 Spring Security에 제공
+ * 로그인한 사용자의 정보와 권한을 Spring Security가 인증 및 인가 처리에 사용할 수 있도록 제공
  */
 public class CustomUserDetails implements UserDetails {
 

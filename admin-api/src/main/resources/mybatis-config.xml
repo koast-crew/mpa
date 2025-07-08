@@ -13,6 +13,7 @@
         <typeAlias type="koast.admin.domain.policy.entity.Policy" alias="policy"/>
         <typeAlias type="koast.admin.domain.user.dto.UserLoginRequest" alias="userLoginRequest"/>
         <typeAlias type="koast.admin.domain.user.entity.User" alias="user"/>
+        <typeAlias type="koast.admin.domain.user.entity.UserGroup" alias="userGroup"/>
         <typeAlias type="koast.admin.domain.user.session.UserSession" alias="userSession"/>
     </typeAliases>
 

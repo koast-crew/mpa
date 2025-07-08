@@ -2,6 +2,7 @@ package koast.admin.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
+import koast.admin.domain.role.RoleKey;
 import koast.admin.security.auth.filter.JsonUsernamePasswordAuthenticationFilter;
 import koast.admin.security.auth.handler.CustomAuthenticationFailureHandler;
 import koast.admin.security.auth.handler.CustomAuthenticationSuccessHandler;
@@ -42,7 +43,8 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login/**", "/css/**", "/js/**", "/images/**").permitAll()
-                        .anyRequest().authenticated()
+                        // 관리자 페이지 접근 권한이 있는 사용자 그룹만 접근 가능
+                        .anyRequest().hasAuthority(RoleKey.ADMIN_LOGIN.name())
                 )
                 .addFilterAt(jsonFilter, JsonUsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session -> session

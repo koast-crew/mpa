@@ -18,9 +18,9 @@ public class Role {
     private String roleName;
     // Role KEY
     private String roleKey;
-    // Role 타켓. 0 : 사용자 사이트, 1 : 관리자  사이트, 2 : 서버
+    // Role 타켓. USER, ADMIN
     private String roleTarget;
-    // 업무 유형. 0 : 사용자, 1 : 서버, 3 : api
+    // 업무 유형. 여긴 좀 모호함이 있음. USER, ADMIN, API
     private String roleType;
     // true : 기본, false : 선택
     private Boolean basic;
@@ -28,7 +28,7 @@ public class Role {
     private Boolean available;
     // 설명
     private String description;
-    
+
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdDate;
 }
