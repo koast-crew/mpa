@@ -43,6 +43,8 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login/**", "/css/**", "/js/**", "/images/**").permitAll()
+// 추가적인 권한 체크가 필요한 경우
+//                        .requestMatchers("/user/create/**").hasAuthority("USER_CREATE_ROLE")
                         // 관리자 페이지 접근 권한이 있는 사용자 그룹만 접근 가능
                         .anyRequest().hasAuthority(RoleKey.ADMIN_LOGIN.name())
                 )

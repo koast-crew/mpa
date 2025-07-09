@@ -3,17 +3,28 @@
 
 <mapper namespace="koast.admin.repository.UserMapper">
 
-    <!-- 여기에 User를 ResultMap으로 만들어서 사용해야 함
     <resultMap id="UserWithGroupMap" type="user">
         <id property="userId" />
-        ... 생략. pk만 id 그 외 컬럼은 result ...
+        <result property="userName" />
         <association property="userGroup" javaType="userGroup">
-            <id property="userGroupId" />
-            <result property="userGroupName" />
-            ... 생략 ...
+            <id property="userGroupId"/>
+            <result property="userGroupKey"/>
+            <result property="userGroupName"/>
+            <!-- 나머지 컬럼은 userGroup을 직접 조회해서 사용 -->
         </association>
     </resultMap>
-     -->
+
+    <resultMap id="UserWithGroupAndRolesMap" type="user" extends="UserWithGroupMap">
+        <association property="userGroup" javaType="userGroup">
+            <collection property="roles" ofType="role">
+                <!-- id property가 userGroupRoleId 같은데 테스트 해 봐야 겠다. -->
+                <id property="roleId"/>
+                <result property="roleName"/>
+                <result property="roleKey"/>
+                <!-- 나머지 컬럼은 role을 직접 조회해서 사용 -->
+            </collection>
+        </association>
+    </resultMap>
 
     <!-- 세션 정보 -->
     <select id="findByUserIdAndPolicy" parameterType="userLoginRequest" resultType="userSession">
@@ -31,6 +42,21 @@
 			]]>
 		FROM user_info A LEFT OUTER JOIN user_group B ON A.user_group_id = B.user_group_id
         WHERE A.user_id = #{userId}
+    </select>
+
+    <!-- Role 정보 -->
+    <select id="findUserWithGroupAndRoles" parameterType="userLoginRequest" resultMap="UserWithGroupAndRolesMap">
+        SELECT
+            u.user_id,
+            u.user_name,
+            g.user_group_id,
+            g.user_group_name,
+            r.role_id,
+            r.role_name
+        FROM user_info A JOIN user_group g ON u.user_group_id = g.user_group_id
+            LEFT JOIN user_group_role ugr ON g.user_group_id = ugr.user_group_id
+            LEFT JOIN role r ON ugr.role_id = r.role_id
+        WHERE u.user_id = #{userId}
     </select>
 
     <!-- 사용자 로그인 정보 수정 -->

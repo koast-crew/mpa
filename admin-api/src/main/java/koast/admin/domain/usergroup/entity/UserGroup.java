@@ -1,9 +1,12 @@
 package koast.admin.domain.usergroup.entity;
 
+import koast.admin.domain.role.entity.Role;
+import koast.admin.domain.user.entity.User;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 사용자 그룹
@@ -42,7 +45,10 @@ public class UserGroup {
 
 	// 설명
 	private String description;
-	
+
+    private List<Role> roles;
+    private List<User> users;
+
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime modifiedDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
