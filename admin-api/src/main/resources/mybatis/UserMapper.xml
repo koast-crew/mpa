@@ -14,7 +14,7 @@
         </association>
     </resultMap>
 
-    <resultMap id="UserWithGroupAndRolesMap" type="user" extends="UserWithGroupMap">
+    <resultMap id="UserWithGroupAndRolesMap" type="userWithGroupAndRolesResponse" extends="UserWithGroupMap">
         <association property="userGroup" javaType="userGroup">
             <collection property="roles" ofType="role">
                 <!-- id property가 userGroupRoleId 같은데 테스트 해 봐야 겠다. -->
@@ -45,18 +45,15 @@
     </select>
 
     <!-- Role 정보 -->
-    <select id="findUserWithGroupAndRoles" parameterType="userLoginRequest" resultMap="UserWithGroupAndRolesMap">
-        SELECT
-            u.user_id,
-            u.user_name,
-            g.user_group_id,
-            g.user_group_name,
-            r.role_id,
-            r.role_name
-        FROM user_info A JOIN user_group g ON u.user_group_id = g.user_group_id
-            LEFT JOIN user_group_role ugr ON g.user_group_id = ugr.user_group_id
-            LEFT JOIN role r ON ugr.role_id = r.role_id
-        WHERE u.user_id = #{userId}
+    <select id="findUserWithGroupAndRoles" parameterType="userLoginRequest" resultMap="UserWithGroupAndRolesResponse">
+        SELECT A.*,
+            B.user_group_name,
+            C.user_group_role_id,
+            D.role_id, D.role_name
+        FROM user_info A JOIN user_group B ON A.user_group_id = B.user_group_id
+            LEFT JOIN user_group_role C ON B.user_group_id = C.user_group_id
+            LEFT JOIN role D ON C.role_id = D.role_id
+        WHERE A.user_id = #{userId}
     </select>
 
     <!-- 사용자 로그인 정보 수정 -->

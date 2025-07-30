@@ -8,18 +8,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.security.Security;
 import java.util.Set;
 
 @Slf4j
-@SpringBootTest
 public class JasyptTest {
-    @Autowired
-    private PooledPBEStringEncryptor encryptor;
-
     @Test
     public void testJasyptEncryption() {
+        // 1. JasyptConfig만 로드한 Spring 컨텍스트 생성
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JasyptConfig.class);
+
+        // 2. Bean 이름으로 가져오기 (JasyptConfig에서 @Bean("jasyptStringEncryptor") 선언됨)
+        PooledPBEStringEncryptor encryptor = (PooledPBEStringEncryptor) context.getBean("jasyptStringEncryptor");
+
         log.info("-----------------------------------------");
 
         String url = "jdbc:postgresql://localhost:25432/mpa";
