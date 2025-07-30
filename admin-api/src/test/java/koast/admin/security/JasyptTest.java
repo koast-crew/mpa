@@ -1,5 +1,6 @@
 package koast.admin.security;
 
+import koast.admin.config.JasyptConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
