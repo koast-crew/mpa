@@ -1,6 +1,6 @@
 package koast.admin.config;
 
-import koast.admin.security.crypto.KoastKeyManager;
+import koast.admin.config.crypto.KoastKeyManager;
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;

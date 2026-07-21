@@ -1,11 +1,11 @@
-package koast.admin.security.auth.handler;
+package koast.admin.security.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import koast.admin.common.response.ApiResponse;
-import koast.admin.domain.user.auth.UserPrincipal;
+import koast.admin.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;

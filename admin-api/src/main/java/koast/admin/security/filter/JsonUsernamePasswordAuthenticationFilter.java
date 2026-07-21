@@ -1,4 +1,4 @@
-package koast.admin.security.auth.filter;
+package koast.admin.security.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;

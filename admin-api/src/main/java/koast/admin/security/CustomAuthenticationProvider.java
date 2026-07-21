@@ -1,4 +1,4 @@
-package koast.admin.security.auth;
+package koast.admin.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

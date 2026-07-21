@@ -1,4 +1,4 @@
-package koast.admin.domain.common.mapper;
+package koast.admin.common.mapper;
 
 /**
  * 입력 DTO → ENTITY → 출력 DTO 매핑을 위한 공통 Mapper 명세

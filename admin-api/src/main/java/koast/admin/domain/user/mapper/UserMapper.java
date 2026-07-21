@@ -1,6 +1,6 @@
 package koast.admin.domain.user.mapper;
 
-import koast.admin.domain.common.mapper.BaseMapper;
+import koast.admin.common.mapper.BaseMapper;
 import koast.admin.domain.policy.dto.PolicyRequest;
 import koast.admin.domain.policy.dto.PolicyResponse;
 import koast.admin.domain.policy.entity.Policy;

@@ -1,4 +1,4 @@
-package koast.admin.common.mybatis.typehandler;
+package koast.admin.config.mybatis.typehandler;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

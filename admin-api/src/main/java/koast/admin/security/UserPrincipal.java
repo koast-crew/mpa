@@ -1,4 +1,4 @@
-package koast.admin.domain.user.auth;
+package koast.admin.security;
 
 import koast.admin.domain.user.UserStatus;
 import lombok.*;

@@ -1,5 +1,5 @@
 // 위치: koast.admin.security.auth.CustomUserDetails.java
-package koast.admin.security.auth;
+package koast.admin.security;
 
 import koast.admin.domain.user.entity.User;
 import org.springframework.security.core.GrantedAuthority;

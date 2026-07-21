@@ -1,4 +1,4 @@
-package koast.admin.security.auth.handler;
+package koast.admin.security.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

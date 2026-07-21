@@ -1,4 +1,4 @@
-package koast.admin.security.auth;
+package koast.admin.security;
 
 import koast.admin.domain.user.entity.User;
 import koast.admin.repository.UserRepository;

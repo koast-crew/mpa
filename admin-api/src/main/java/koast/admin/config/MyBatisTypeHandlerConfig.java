@@ -1,6 +1,6 @@
 package koast.admin.config;
 
-import koast.admin.common.mybatis.typehandler.GenericEnumTypeHandler;
+import koast.admin.config.mybatis.typehandler.GenericEnumTypeHandler;
 import koast.admin.domain.user.UserStatus;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
